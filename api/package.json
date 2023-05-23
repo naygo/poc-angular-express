@@ -1,17 +1,27 @@
 {
-  "name": "api",
+  "type": "module",
+  "name": "poc-angular-express",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naygo/poc-angular-express.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naygo/poc-angular-express/issues"
+  },
+  "homepage": "https://github.com/naygo/poc-angular-express#readme",
   "dependencies": {
-    "express": "^4.18.2",
-    "path": "^0.12.7"
+    "@angular/platform-server": "^16.0.2",
+    "@nguniversal/express-engine": "^16.0.2",
+    "express": "^4.18.2"
   }
 }
