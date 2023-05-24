@@ -25,11 +25,7 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
-            "scripts": [
-              "../api/public/node_modules/angular/angular.min.js",
-              "../api/public/src/app.js",
-              "../api/public/src/main.controller.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
