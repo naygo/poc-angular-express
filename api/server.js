@@ -11,7 +11,10 @@ app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'views'));
 
 // Configurando o diretório de arquivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
+const diretorioDist = path.join(__dirname, '..', 'web', 'dist', 'web')
+const arquivoHtmlAngular = path.join(__dirname, '..', 'web', 'dist', 'web', 'index.html')
+
+app.use(express.static(diretorioDist));
 
 // Configurando as rotas
 app.get('/', (req, res) => {
@@ -20,7 +23,7 @@ app.get('/', (req, res) => {
 
 // Redirecionando todas as outras rotas para o Angular
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(arquivoHtmlAngular);
 });
 
 // Iniciando o servidor
