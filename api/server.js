@@ -8,22 +8,12 @@ const port = 3000;
 // Configurando o middleware express-engine
 app.engine('html', expressEngine);
 app.set('view engine', 'html');
-app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.static(path.join(__dirname, '..', 'web', 'dist', 'aceite')));
 
 // Configurando o diretório de arquivos estáticos
-const diretorioDist = path.join(__dirname, '..', 'web', 'dist', 'web')
-const arquivoHtmlAngular = path.join(__dirname, '..', 'web', 'dist', 'web', 'index.html')
-
-app.use(express.static(diretorioDist));
-
-// Configurando as rotas
-app.get('/', (req, res) => {
-  res.render('index');
-});
-
-// Redirecionando todas as outras rotas para o Angular
-app.get('*', (req, res) => {
-  res.sendFile(arquivoHtmlAngular);
+app.get('/teste', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'web', 'dist', 'aceite', 'index.html'));
 });
 
 // Iniciando o servidor
